@@ -5,7 +5,7 @@ app.controller('playController',function($scope,playService){
 		playService.findItemList().success(
 			function (response) {
 				$scope.itemList = response;
-				alert("itemList："+$scope.itemList);
+				//alert("itemList："+$scope.itemList);
 			}
 		)
 	}

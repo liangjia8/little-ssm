@@ -58,30 +58,37 @@
 		</div>
 		<!--All goods-->
 		<div class="allgoods">
-			<h4>全部商品<span>11</span></h4>
+			<h4>全部商品<span>10</span></h4>
 			<div class="cart-main">
 				<div class="yui3-g cart-th">
-					<div class="yui3-u-1-4"><input type="checkbox" name="" id="" value="" /> 全部</div>
 					<div class="yui3-u-1-4">商品ID</div>
 					<div class="yui3-u-1-4">商品描述</div>
-					<div class="yui3-u-1-8">卖点</div>
-					<div class="yui3-u-1-8">价格</div>
+					<div class="yui3-u-1-4">卖点</div>
+					<div class="yui3-u-1-4">价格</div>
 				</div>
 					<div class="cart-body">
 						<div class="cart-list" ng-repeat="item in itemList">
 							<ul class="goods-list yui3-g">
-								<li class="yui3-u-1-8">
-									<div class="good-item">
+								<li class="yui3-u-1-4">
+									<div class="yui3-u-1-4">
 										<div class="item-msg">{{item.id}}</div>
 									</div>
 								</li>
-								<li class="yui3-u-1-8">
+								<li class="yui3-u-1-4">
 									<div class="good-item">
 										<div class="item-msg">{{item.title}}</div>
 									</div>
 								</li>
-								<li class="yui3-u-1-8"><span class="sum">{{item.sellPoint}}</span></li>
-								<li class="yui3-u-1-8"><span class="price">{{item.price}}</span></li>
+								<li class="yui3-u-1-4">
+									<div class="good-item">
+										<div class="item-msg">{{item.sellPoint}}</div>
+									</div>
+								</li>
+								<li class="yui3-u-1-4">
+									<div class="good-item">
+										<div class="item-msg">{{item.price}}</div>
+									</div>
+								</li>
 							</ul>
 						</div>
 					</div>
