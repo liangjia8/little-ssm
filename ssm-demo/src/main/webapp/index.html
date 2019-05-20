@@ -11,12 +11,12 @@
     <link rel="stylesheet" type="text/css" href="css/pages-cart.css" />
     <script type="text/javascript" src="plugins/angularjs/angular.min.js"> </script>
 	<script type="text/javascript" src="js/base.js"> </script>
-	<script type="text/javascript" src="js/service/cartService.js"> </script>
-	<script type="text/javascript" src="js/controller/cartController.js"> </script>
+	<script type="text/javascript" src="js/service/playService.js"> </script>
+	<script type="text/javascript" src="js/controller/playController.js"> </script>
     
 </head>
 
-<body ng-app="play" ng-controller="cartController" ng-init="findCartList()">
+<body ng-app="play" ng-controller="playController" ng-init="findItemList()">
 	<!--head-->
 	<div class="top">
 		<div class="py-container">
@@ -62,53 +62,33 @@
 			<div class="cart-main">
 				<div class="yui3-g cart-th">
 					<div class="yui3-u-1-4"><input type="checkbox" name="" id="" value="" /> 全部</div>
-					<div class="yui3-u-1-4">商品名称</div>
-					<div class="yui3-u-1-8">单价（元）</div>
-					<div class="yui3-u-1-8">数量</div>
-					<div class="yui3-u-1-8">小计（元）</div>
-					<div class="yui3-u-1-8">操作</div>
+					<div class="yui3-u-1-4">商品ID</div>
+					<div class="yui3-u-1-4">商品描述</div>
+					<div class="yui3-u-1-8">卖点</div>
+					<div class="yui3-u-1-8">价格</div>
 				</div>
-				<div class="cart-item-list" ng-repeat="cart in cartList">
-					<div class="cart-shop">
-						<input type="checkbox" name="" id="" value="" />
-						<span class="shopname self">{{cart.sellerName}}  【商家ID:{{cart.sellerId}}】</span>
-					</div>
 					<div class="cart-body">
-						<div class="cart-list" ng-repeat="item in cart.orderItemList">
+						<div class="cart-list" ng-repeat="item in itemList">
 							<ul class="goods-list yui3-g">
-								<li class="yui3-u-1-24">
-									<input type="checkbox" name="" id="" value="" />
-								</li>
-								<li class="yui3-u-11-24">
+								<li class="yui3-u-1-8">
 									<div class="good-item">
-										<div class="item-img"><img src="{{item.picPath}}" /></div>
+										<div class="item-msg">{{item.id}}</div>
+									</div>
+								</li>
+								<li class="yui3-u-1-8">
+									<div class="good-item">
 										<div class="item-msg">{{item.title}}</div>
 									</div>
 								</li>
-								
+								<li class="yui3-u-1-8"><span class="sum">{{item.sellPoint}}</span></li>
 								<li class="yui3-u-1-8"><span class="price">{{item.price}}</span></li>
-								<li class="yui3-u-1-8">
-									<a href="javascript:void(0)" class="increment mins" ng-click="addGoodsToCartList(item.itemId,-1)">-</a>
-									<input autocomplete="off" type="text" value="1" minnum="1" class="itxt" ng-model="item.num" />
-									<a href="javascript:void(0)" class="increment plus" ng-click="addGoodsToCartList(item.itemId,1)">+</a>
-								</li>
-								<li class="yui3-u-1-8"><span class="sum">{{item.totalFee}}</span></li>
-								<li class="yui3-u-1-8">
-									<a href="#none">删除</a><br />
-									<a href="#none">移到我的关注</a>
-								</li>
 							</ul>
 						</div>
-						
-						
 					</div>
-				</div>
-				
-				
 			</div>
 			<div class="cart-tool">
 				<div class="select-all">
-					<input type="checkbox" name="" id="" value="" />
+					<input type="checkbox" name="" id="111" value="" />
 					<span>全选</span>
 				</div>
 				<div class="option">

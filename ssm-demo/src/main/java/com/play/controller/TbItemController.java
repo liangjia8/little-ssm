@@ -21,6 +21,7 @@ public class TbItemController {
 
     @RequestMapping("/select")
     public List<TbItem> selectTbItem(){
+        System.out.println("---------------进入方法-----------");
         List<TbItem> tbItems = itemService.selectTbItem();
         for (TbItem tbItem : tbItems) {
             System.out.println("tbItem:"+tbItem.toString());

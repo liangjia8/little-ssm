@@ -85,9 +85,10 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    id, title, sell_point, price, stock_count, num, barcode, image, categoryId, status, 
-    create_time, update_time, item_sn, cost_pirce, market_price, is_default, goods_id, 
-    seller_id, cart_thumbnail, category, brand, spec, seller
+       id, title, sell_point, price
+--     , stock_count, num, barcode, image, categoryId, status,
+--     create_time, update_time, item_sn, cost_pirce, market_price, is_default, goods_id,
+--     seller_id, cart_thumbnail, category, brand, spec, seller
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.play.pojo.TbItemExample" >
     select
@@ -102,5 +103,6 @@
     <if test="orderByClause != null" >
       order by ${orderByClause}
     </if>
+    limit 1,10
   </select>
 </mapper>
